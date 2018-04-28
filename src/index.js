@@ -20,6 +20,7 @@ app.use(koaCors());
 app.use(async (ctx, next) => {
 	if (ctx.header.authorization) {
 		const token = ctx.header.authorization.match(/Bearer ([A-Za-z0-9]+)/);
+		console.log(token);
 		if (token && token[1]) {
 			ctx.state.token = token[1];
 		}
